@@ -1,0 +1,114 @@
+---
+title: "Actividad Transversal: Visualización de Datos"
+author: "Nombre del Estudiante"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(tidyverse)
+library(janitor)
+library(readr)
+library(lubridate)
+```
+
+## *Semana 1: Un vistazo a los datos*
+
+Carga de datos
+
+```{r}
+# Cargar dataset de prueba o inicial
+dataset <- read_csv("tips.csv")
+dataset <- clean_names(dataset)
+```
+
+Exploración inicial
+
+```{r}
+glimpse(dataset)
+summary(dataset)
+head(dataset)
+colSums(is.na(dataset))
+```
+
+## *Semana 2: Definición del problema y selección del dataset*
+
+**Justificación del dataset elegido**
+
+Para esta actividad seleccioné el dataset tips, disponible públicamente a través de la librería seaborn. Este conjunto de datos contiene información sobre transacciones realizadas en un restaurante, incluyendo variables como el total de la cuenta, la propina otorgada, el día de la semana, el sexo del cliente, si eran fumadores o no, y la hora del día (almuerzo o cena). La fuente del dataset es confiable y ampliamente utilizada para propósitos educativos y de análisis exploratorio.
+
+La razón principal para seleccionar este dataset es que, a pesar de ser relativamente pequeño y manejable, permite aplicar múltiples técnicas de transformación de datos y realizar visualizaciones efectivas. Además, los datos son adecuados para desarrollar preguntas de análisis que vinculan comportamiento del consumidor y variables contextuales.
+
+Este dataset es ideal para el nivel actual del curso, ya que permite practicar limpieza, transformación, agregaciones, visualización y redacción de conclusiones sin la complejidad de un gran volumen de datos o problemas de calidad graves.
+
+**Preguntas de análisis**
+
+¿Cuál es la distribución del total de las cuentas pagadas por los clientes?
+
+¿Existen diferencias en las propinas otorgadas según el sexo del cliente?
+
+¿Cuál es el día de la semana con mayor gasto promedio?
+
+¿Qué porcentaje del total de la cuenta representa la propina (tip) y cómo varía entre distintos grupos?
+
+## *Semana 3: Análisis y visualizaciones*
+
+Transformaciones
+
+```{r}
+dataset <- dataset %>%
+  mutate(
+    tip_percentage = tip / total_bill * 100,
+    day = as.factor(day),
+    sex = as.factor(sex)
+  )
+```
+
+Visualización 1: Histograma
+
+```{r}
+ggplot(dataset, aes(x = total_bill)) +
+  geom_histogram(bins = 30, fill = "skyblue", color = "black") +
+  labs(title = "Distribución del total de la cuenta", x = "Total Bill")
+
+```
+
+Visualización 2: Boxplot
+
+```{r}
+ggplot(dataset, aes(x = sex, y = tip_percentage)) +
+  geom_boxplot(fill = "orange") +
+  labs(title = "Propinas (%) por sexo", y = "Propina %")
+
+```
+
+Visualización 3:Gráfico de barras
+
+```{r}
+dataset %>%
+  group_by(day) %>%
+  summarise(promedio = mean(total_bill)) %>%
+  ggplot(aes(x = day, y = promedio)) +
+  geom_col(fill = "steelblue") +
+  labs(title = "Gasto promedio por día", y = "Total promedio")
+
+```
+
+## *Semana 4: Conclusiones y publicación*
+
+**Principales hallazgos** Durante el análisis del dataset tips, se observaron los siguientes hallazgos relevantes:
+
+Distribución del gasto total: La mayoría de las cuentas totales se concentran entre 10 y 20 dólares, con unos pocos valores extremos por encima de 40 dólares. Esto indica una distribución sesgada hacia la derecha, típica en transacciones de consumo.
+
+Diferencias por sexo en el porcentaje de propina: Al calcular el porcentaje de propina respecto al total de la cuenta (tip_percentage), observamos que los valores están ligeramente más concentrados y altos en el grupo femenino, aunque la diferencia no es extremadamente marcada. El uso de boxplots permitió ver claramente la mediana y los valores atípicos.
+
+Gasto promedio por día: El análisis de gasto promedio por día muestra que los días con mayor ticket promedio son sábado y domingo. Esto puede relacionarse con un mayor número de comensales o cuentas más grandes en fines de semana, posiblemente debido a salidas familiares o en grupo.
+
+Variación en el porcentaje de propina: La propina como porcentaje del total de la cuenta oscila mayormente entre el 10% y el 20%, siendo más común alrededor del 15%. Se identificaron algunos clientes que dieron más del 30% de propina, lo cual constituye un comportamiento fuera de lo común.
+
+**Reflexión** Este ejercicio permitió aplicar todos los conocimientos previos de limpieza, transformación y visualización de datos. Trabajar con un dataset real, aunque pequeño, facilitó la exploración libre de patrones de comportamiento y el desarrollo de inferencias simples.
+
+Aprendí que incluso datasets con pocas variables pueden ofrecer múltiples ángulos de análisis si se hacen las preguntas adecuadas. Además, la combinación de visualización y cálculo permitió entender mejor el comportamiento de los clientes en el restaurante.
+
+Enlace al proyecto en GitHub <https://github.com/miusuario/proyecto-visualizacion-tips>
