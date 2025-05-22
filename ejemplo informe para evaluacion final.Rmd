@@ -1,6 +1,6 @@
 ---
 title: "Actividad Transversal: Visualización de Datos"
-author: "Nombre del Estudiante"
+author: "Melissa"
 date: "`r Sys.Date()`"
 output: html_document
 ---

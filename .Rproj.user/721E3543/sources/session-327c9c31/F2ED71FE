@@ -1,9 +1,9 @@
 {
     "id": "F2ED71FE",
-    "path": "C:/Users/valen/OneDrive/Escritorio/2. Visualización y Análisis de datos/5. Secuencias didácticas y scripts/s8/ejemplo informe para evaluacion final.Rmd",
+    "path": "~/GitHub/stg/ejemplor/ejemplo informe para evaluacion final.Rmd",
     "project_path": "ejemplo informe para evaluacion final.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "1884637743",
     "contents": "",
     "dirty": false,
     "created": 1747924961827.0,
@@ -13,7 +13,7 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "7,13",
+        "cursorPosition": "2,16",
         "scrollLine": "0",
         "rmdVisualMode": "false",
         "rmdVisualCollapsedChunks": "",
@@ -22,11 +22,11 @@
         "docOutlineVisible": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1747925644,
+    "lastKnownWriteTime": 1747926703,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1747925644504,
+    "last_content_update": 1747926703894,
     "read_only": false,
     "read_only_alternatives": []
 }
