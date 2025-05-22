@@ -111,4 +111,4 @@ Variación en el porcentaje de propina: La propina como porcentaje del total de 
 
 Aprendí que incluso datasets con pocas variables pueden ofrecer múltiples ángulos de análisis si se hacen las preguntas adecuadas. Además, la combinación de visualización y cálculo permitió entender mejor el comportamiento de los clientes en el restaurante.
 
-Enlace al proyecto en GitHub <https://github.com/miusuario/proyecto-visualizacion-tips>
+Enlace al proyecto en GitHub <https://github.com/rainvare/ejemplor>

@@ -3,7 +3,7 @@
     "path": "~/GitHub/stg/ejemplor/ejemplo informe para evaluacion final.Rmd",
     "project_path": "ejemplo informe para evaluacion final.Rmd",
     "type": "r_markdown",
-    "hash": "1884637743",
+    "hash": "2172956798",
     "contents": "",
     "dirty": false,
     "created": 1747924961827.0,
@@ -13,8 +13,8 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "2,16",
-        "scrollLine": "0",
+        "cursorPosition": "111,115",
+        "scrollLine": "108",
         "rmdVisualMode": "false",
         "rmdVisualCollapsedChunks": "",
         "rmdVisualModeLocation": "2900:102",
@@ -22,11 +22,11 @@
         "docOutlineVisible": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1747926703,
+    "lastKnownWriteTime": 1747926867,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1747926703894,
+    "last_content_update": 1747926867476,
     "read_only": false,
     "read_only_alternatives": []
 }
